@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import './reset.css'
 import './App.css';
+import axios from 'axios'
+import Header from './Components/Header';
+import ReturnedBooks from './Components/ReturnedBooks';
+// import Bookshelf from './Components/Bookshelf';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      retrievedBooks:[],
+      shelvedBooks:[]
+     }
+  }
+
+  retrieveBooks=(title)=>{
+    console.log(title)
+    axios.get(`/api/retrieved-books/${title}`)
+    .then(res=>{
+      this.setState({
+        retrievedBooks:res.data[0].items
+      })
+    })
+    .catch(err=>console.log(err))
+  }
+
+
+  render() { 
+    return ( 
+      <div>
+        {console.log(this.state.retrievedBooks)}
+      <Header retrieveBooks={this.retrieveBooks}/>
+      <ReturnedBooks retrievedBooks={this.state.retrievedBooks}/>
+      {/* <Bookshelf /> */}
+      </div>
+     );
+  }
 }
-
+ 
 export default App;
+
