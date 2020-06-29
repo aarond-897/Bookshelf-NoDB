@@ -1,11 +1,19 @@
+*{
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+}
+
+.webpage{
+  background-image: linear-gradient(90deg, #061700, rgb(148, 175, 154) );
+  /* background-color: #F0EAD6; */
 }
 
 .header{
   height: 10vh;
   width: 100%;
-  background-color: aqua;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,13 +23,105 @@
   width: 80%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+
+.web-title{
+  font-size: 90px;
+  color: brown;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-decoration: underline;
+}
+
+.search{
+  display: flex;
+}
+
+.search-input{
+  border-radius: 15%;
+  height: 3vh;
+  width: 15vw;
+  margin-right: 1vh;
+}
+
+.search-button{
+  height: 3vh;
+  width: 3vh;
+  border: none;
+  background-color: transparent;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/26px-Magnifying_glass_icon.svg.png');
+  background-repeat: no-repeat;
+}
+
+.search-button:hover{
+  cursor: pointer;
+}
+
+.book-section{
+  display: flex;
+}
+
+.bookshelf-section{
+  height: 90vh;
+  width: 40%;
+  background-color: #20130ee3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-radius: 1% 1% 0% 0%;
+}
+
+.bookshelf{
+  width: 90%;
+  /* background: repeating-linear-gradient(#502F2E,#B96E43); */
+  background: repeating-linear-gradient(#B96E43, #502F2E 15vh, rgb(70, 41, 40) 2vh, rgb(51, 30, 29) 18vh);
+  /* 502F2E */
+  height: 87vh;
+  border:10px solid rgba(34, 16, 2, 0.97);
+  box-shadow: 4px 10px 8px #252525 inset;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shelved-book{
+  position: relative;
+  height: 15vh;
+  margin-right: 5px;
+  writing-mode: vertical-rl;
+  margin-top: 2px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5%;
+  box-shadow: 3px 3px 4px  #252525 inset;
+  z-index: 1;
+}
+
+
+.book-title{
+  text-align: center;
+} 
+.shelved-book:hover{
+  cursor: pointer;
+  border:1px solid white;
+}
+
+ .dropDown{
+  position: absolute ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  height: 2vh;
+  width: 50%;
 }
 
 .retrieved-books{
   height: 90vh;
-  width: 60vw;
+  width: 60%;
   display: flex;
-  background-color: grey;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
@@ -29,16 +129,20 @@
 
 .book{
   display: flex;
+  align-self: center;
+  justify-content: center;
+  height: 30vh;
+  width: 25vh;
+  border-radius: 3%;
+  margin:0px 5px;
 }
 
 .book img{
-  height: 30vh;
-  width: 25vh;
-  margin:0px 5px;
-  border-radius: 3%;
+  height: auto;
+  width: 100%;
 }
 
-/* .adding-book{
-  background-color: transparent;
-  z-index: 1;
-} */
+.add-book:hover{
+  cursor: pointer;
+}
+

@@ -2,6 +2,7 @@
 
 const express = require('express');
 const retrievedBooks =require('./controllers/retrievedBooks')
+const collection = require('./controllers/collection')
 const app = express();
 
 app.use(express.json())
@@ -15,3 +16,7 @@ app.listen(port, ()=> console.log(`listening on port ${port}`) )
 app.get('/api/retrieved-books/:title', retrievedBooks.getBooks,)
 
 //front-end endpoints
+app.post('/api/collection',  collection.addToCollection )
+app.get('/api/collection', collection.retrieveCollection)
+app.delete('/api/collection/:id', collection.deleteBook)
+app.put('/api/collection/:id', collection.needToRead)
