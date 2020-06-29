@@ -25,10 +25,10 @@ class Header extends Component {
     return ( 
       <div className="header">
       <div className='header-content'>
-      <p className='web-title'>Bookshelf</p>
+        <h1 className='web-title'>Bookshelf</h1>
       <div className='search'>
-      <input className='search-input' onChange={(e)=>this.handleInput(e.target.value)} value={this.state.input}/>
-      <button className='search-button' onClick={this.handleClick}></button>
+        <input className='search-input' onChange={(e)=>this.handleInput(e.target.value)} value={this.state.input}/>
+        <button className='search-button' onClick={this.handleClick}></button>
       </div>
       </div>
       </div>
