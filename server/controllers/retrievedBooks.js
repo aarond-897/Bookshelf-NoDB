@@ -4,7 +4,7 @@ const axios = require('axios')
 //req is where we can access body, params, and id if sent from client side
 module.exports={
   getBooks:(req,res)=>{
-    let {title}= req.params
+    const {title}= req.params
     const retrievedBooks = [];
 
     axios.get(`https://www.googleapis.com/books/v1/volumes?q=${title}&startIndex=0&maxResults=12`)

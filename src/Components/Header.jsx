@@ -15,7 +15,6 @@ class Header extends Component {
   }
 
   handleClick= () =>{
-    //takes in input value and passes to parent function stored in app.js
     let {input} = this.state
     this.props.retrieveBooks(input)
   }

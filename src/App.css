@@ -8,7 +8,6 @@
 
 .webpage{
   background-image: linear-gradient(90deg, #061700, rgb(148, 175, 154) );
-  /* background-color: #F0EAD6; */
 }
 
 .header{
@@ -74,14 +73,13 @@
 
 .bookshelf{
   width: 90%;
-  /* background: repeating-linear-gradient(#502F2E,#B96E43); */
   background: repeating-linear-gradient(#B96E43, #502F2E 15vh, rgb(70, 41, 40) 2vh, rgb(51, 30, 29) 18vh);
-  /* 502F2E */
   height: 87vh;
   border:10px solid rgba(34, 16, 2, 0.97);
   box-shadow: 4px 10px 8px #252525 inset;
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .shelved-book{
@@ -97,6 +95,7 @@
   border-radius: 5%;
   box-shadow: 3px 3px 4px  #252525 inset;
   z-index: 1;
+  margin-bottom: 2.5vh;
 }
 
 

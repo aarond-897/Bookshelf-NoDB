@@ -26,7 +26,7 @@ class ShelvedBook extends Component {
   }
   
   render() { 
-    const divStyle={
+    const bookStyle={
       width: `${this.props.pageCount*.01}%`,
       backgroundColor: `${this.props.needToRead===true ? 'rgb(202, 145, 113)' : 'rgb(202, 199, 166)'}`
     }
@@ -36,7 +36,7 @@ class ShelvedBook extends Component {
     }
     
     return ( 
-      <div className='shelved-book' style={divStyle} onClick={this.handleClick}>
+      <div className='shelved-book' style={bookStyle} onClick={this.handleClick}>
          <p className='book-title' style={fontStyle}>{this.props.title}</p>
          {this.state.onClicked ? <div className="dropDown"><button onClick={this.sendDelete}>X</button><button onClick={this.sendNeedsToRead}>O</button></div>:null}
       </div>
@@ -46,21 +46,3 @@ class ShelvedBook extends Component {
   
    export default ShelvedBook;
 
-    // const ShelvedBook= (props) => {
-    //   const divStyle={
-    //     width: `${props.pageCount*.01}%`,
-        
-    //   }
-      
-    //   const fontStyle={
-    //     fontSize: `${props.pageCount*.25}%`
-    //   }
-    //   return ( 
-    //     <div className='shelved-book' style={divStyle}>
-    //       <p className='book-title' style={fontStyle}>{props.title}</p>
-    //       {/* <Dropdown deleteBookFn={props.deleteBookFn} id={props.id}/> */}
-    //     </div>
-    //    );
-    //   }
-    
-    // export default ShelvedBook;
