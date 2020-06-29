@@ -38,7 +38,7 @@ class ShelvedBook extends Component {
     return ( 
       <div className='shelved-book' style={bookStyle} onClick={this.handleClick}>
          <p className='book-title' style={fontStyle}>{this.props.title}</p>
-         {this.state.onClicked ? <div className="dropDown"><button onClick={this.sendDelete}>X</button><button onClick={this.sendNeedsToRead}>O</button></div>:null}
+         {this.state.onClicked ? <div className="dropDown"><button className='remove-book' onClick={this.sendDelete}></button><button className='color-change' onClick={this.sendNeedsToRead}></button></div>:null}
       </div>
      )
     }
